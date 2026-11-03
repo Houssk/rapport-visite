@@ -1,0 +1,53 @@
+{
+  "id": "multirisque",
+  "titre": "Fiche de visite multirisque",
+  "source": "EXEMPLE à remplacer par la conversion du PDF réel (voir CLAUDE.md, « Ajouter un formulaire »)",
+  "sections": [
+    { "id": "general", "titre": "Informations générales", "champs": [
+      { "id": "raison", "label": "Raison sociale", "type": "texte", "obligatoire": true },
+      { "id": "interlocuteur", "label": "Interlocuteur présent", "type": "texte" },
+      { "id": "datev", "label": "Date de la visite", "type": "date", "obligatoire": true },
+      { "id": "occupation", "label": "Statut d'occupation", "type": "choix", "options": ["Propriétaire", "Locataire", "Propriétaire non occupant"] }
+    ] },
+    { "id": "batiment", "titre": "Bâtiment", "champs": [
+      { "id": "annee", "label": "Année de construction", "type": "texte" },
+      { "id": "surface", "label": "Surface développée", "type": "nombre", "unite": "m²", "pas": 10 },
+      { "id": "niveaux", "label": "Nombre de niveaux", "type": "nombre", "unite": "niveaux", "pas": 1 },
+      { "id": "murs", "label": "Matériaux des murs", "type": "multi", "options": ["Béton", "Brique", "Pierre", "Bois", "Bardage métallique"] },
+      { "id": "toiture", "label": "Toiture", "type": "choix", "options": ["Tuiles", "Ardoise", "Bac acier", "Toit terrasse"] },
+      { "id": "mitoyen", "label": "Bâtiment mitoyen", "type": "ouinon" },
+      { "id": "mitoyenActivite", "label": "Activité du voisin mitoyen", "type": "texte", "si": { "champ": "mitoyen", "egal": "Oui" } },
+      { "id": "photosBatiment", "label": "Photos de la façade et du bâtiment", "type": "photos" }
+    ] },
+    { "id": "activite", "titre": "Activité", "champs": [
+      { "id": "effectif", "label": "Effectif", "type": "nombre", "unite": "personnes", "pas": 1 },
+      { "id": "horaires", "label": "Horaires d'ouverture", "type": "texte" }
+    ] },
+    { "id": "incendie", "titre": "Protection incendie", "champs": [
+      { "id": "nbext", "label": "Nombre d'extincteurs", "type": "nombre", "unite": "extincteurs", "pas": 1 },
+      { "id": "dateext", "label": "Dernière vérification des extincteurs", "type": "date" },
+      { "id": "attExt", "label": "Attestation de vérification des extincteurs", "type": "attestation" },
+      { "id": "detection", "label": "Détection automatique d'incendie", "type": "ouinon" },
+      { "id": "ria", "label": "Robinets d'incendie armés (RIA)", "type": "ouinon" },
+      { "id": "photosIncendie", "label": "Photos des équipements", "type": "photos" },
+      { "id": "obsIncendie", "label": "Observations", "type": "observation" }
+    ] },
+    { "id": "electricite", "titre": "Installation électrique", "champs": [
+      { "id": "ctrlElec", "label": "Contrôle annuel réalisé", "type": "ouinon" },
+      { "id": "dateElec", "label": "Date du dernier contrôle", "type": "date", "si": { "champ": "ctrlElec", "egal": "Oui" } },
+      { "id": "attElec", "label": "Rapport de vérification électrique", "type": "attestation", "si": { "champ": "ctrlElec", "egal": "Oui" } },
+      { "id": "etatTableau", "label": "État du tableau électrique", "type": "choix", "options": ["Bon", "Moyen", "Mauvais"] },
+      { "id": "photosElec", "label": "Photos du tableau électrique", "type": "photos" },
+      { "id": "obsElec", "label": "Observations", "type": "observation" }
+    ] },
+    { "id": "vol", "titre": "Protection contre le vol", "champs": [
+      { "id": "protVol", "label": "Moyens de protection", "type": "multi", "options": ["Serrures multipoints", "Rideaux métalliques", "Alarme", "Télésurveillance", "Vidéosurveillance"] },
+      { "id": "coffre", "label": "Coffre-fort", "type": "ouinon" },
+      { "id": "photosVol", "label": "Photos des accès", "type": "photos" }
+    ] },
+    { "id": "synthese", "titre": "Observations et recommandations", "champs": [
+      { "id": "obsGenerale", "label": "Synthèse de la visite", "type": "observation", "obligatoire": true },
+      { "id": "recommandations", "label": "Recommandations au client", "type": "observation" }
+    ] }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "annexe-cuisson",
+  "titre": "Annexe cuisson professionnelle",
+  "source": "EXEMPLE à remplacer par la conversion du PDF réel",
+  "sections": [
+    { "id": "cuisson", "titre": "Cuisson professionnelle", "champs": [
+      { "id": "energie", "label": "Énergie de cuisson", "type": "choix", "options": ["Gaz", "Électrique", "Mixte"] },
+      { "id": "hotte", "label": "Hotte nettoyée depuis moins d'un an", "type": "ouinon", "obligatoire": true },
+      { "id": "attHotte", "label": "Attestation de nettoyage de la hotte", "type": "attestation", "si": { "champ": "hotte", "egal": "Oui" } },
+      { "id": "coupureGaz", "label": "Coupure gaz d'urgence accessible", "type": "ouinon", "si": { "champ": "energie", "different": "Électrique" } },
+      { "id": "photosCuisine", "label": "Photos de la cuisine et de la hotte", "type": "photos" }
+    ] }
+  ]
+}

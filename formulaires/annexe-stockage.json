@@ -1,0 +1,14 @@
+{
+  "id": "annexe-stockage",
+  "titre": "Annexe stockage",
+  "source": "EXEMPLE à remplacer par la conversion du PDF réel",
+  "sections": [
+    { "id": "stockage", "titre": "Stockage", "champs": [
+      { "id": "hauteurStockage", "label": "Hauteur de stockage", "type": "nombre", "unite": "m", "pas": 1 },
+      { "id": "inflammables", "label": "Produits inflammables stockés", "type": "ouinon" },
+      { "id": "localDedie", "label": "Local dédié et séparé", "type": "ouinon", "si": { "champ": "inflammables", "egal": "Oui" } },
+      { "id": "photosStockage", "label": "Photos des zones de stockage", "type": "photos" },
+      { "id": "obsStockage", "label": "Observations", "type": "observation" }
+    ] }
+  ]
+}

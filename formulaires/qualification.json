@@ -1,0 +1,13 @@
+{
+  "questions": [
+    { "id": "typeClient", "titre": "Type de client", "multiple": false, "options": ["Professionnel", "Particulier", "Copropriété"] },
+    { "id": "activite", "titre": "Activité principale", "multiple": false, "options": ["Restaurant", "Commerce", "Bureaux", "Atelier", "Entrepôt", "Hôtel"] },
+    { "id": "surface", "titre": "Surface des locaux", "multiple": false, "options": ["Moins de 300 m²", "300 à 1 000 m²", "Plus de 1 000 m²"] },
+    { "id": "particularites", "titre": "Particularités du site", "multiple": true, "options": ["Cuisson sur place", "Stockage de produits inflammables", "Locaux en sous-sol", "Aucune"] }
+  ],
+  "regles": [
+    { "formulaire": "multirisque", "toujours": true, "raison": "Tronc commun" },
+    { "formulaire": "annexe-cuisson", "si": [{ "question": "activite", "contient": "Restaurant" }, { "question": "particularites", "contient": "Cuisson sur place" }], "raison": "Cuisson sur place" },
+    { "formulaire": "annexe-stockage", "si": [{ "question": "activite", "contient": "Entrepôt" }, { "question": "particularites", "contient": "Stockage de produits inflammables" }], "raison": "Stockage" }
+  ]
+}
