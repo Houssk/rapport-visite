@@ -20,6 +20,7 @@ Chaque évolution ajoute une section en bas (déroulé de CLAUDE.md, étape 2).
 
 ### Règles
 - Aucune donnée envoyée sur internet ; les photos sont réduites à 1600 px avant stockage.
+- Décision du 2026-11-03 : visites stockées uniquement sur la tablette (pas de base de données serveur) pour démarrer. Conséquences acceptées : pas de reprise sur un autre appareil, perte des visites non terminées si les données du navigateur sont effacées. Une base (Supabase) ne s'ajoute que sur décision explicite, en évolution.
 - Une question conditionnelle masquée n'apparaît pas dans le rapport et ne compte pas comme manquante.
 
 ### C'est fini quand…
